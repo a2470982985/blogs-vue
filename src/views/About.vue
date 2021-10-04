@@ -8,8 +8,10 @@
 <script scoped>
 export default  {
     name: 'about',
-  data:{
+  data(){
+      return{
 
+      }
   },mounted() {
 
   }

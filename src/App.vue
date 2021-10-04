@@ -38,33 +38,12 @@ export default {
 <style>
 .el-header{
   height: 100%!important;
+  padding: 0!important;
 }
 .el-footer{
   height: 100%!important;
 }
 
-/*.el-submenu__title {*/
-/*  height: 100%;*/
-/*}*/
-
-/*.el-main {*/
-/*  height: 100%;*/
-/*  padding-top: 0px!important;*/
-/*  padding-bottom: 0px!important;*/
-/*}*/
-
-/*.el-footer {*/
-/*  height: 100% !important;*/
-/*}*/
-
-/*.el-row {*/
-/*  height: 100%;*/
-/*}*/
-
-/*.el-col > * {*/
-/*  height: 100%;*/
-
-/*}*/
 
 #app {
   font-family: 'Hiragino Sans GB', Helvetica, Arial, sans-serif;
@@ -77,14 +56,5 @@ export default {
 }
 
 
-.grid-content {
-  height: 100%;
-  border-radius: 4px;
-  min-height: 36px;
-}
-
-.el-menu-demo.el-menu--horizontal.el-menu {
-  border-bottom: none;
-}
 
 </style>

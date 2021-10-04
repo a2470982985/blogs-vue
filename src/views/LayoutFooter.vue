@@ -1,66 +1,60 @@
 <template xmlns="http://www.w3.org/1999/html">
   <div id="hello">
     <el-divider></el-divider>
-    <el-row type="flex">
-      <el-col :xs="12" :md="6" :lg="6" :xl="6">
-        <span>
-          <img width="100%" height="auto" src="../assets/logo.png">
-          <br/>
-          <br/>
-          <br/>
-          <span class="span1">本站为非盈利性个人网站，本站所有软件来自互联网，版权属原著所有，如有需要请购买正版。如有侵权，敬请来信联系我们，我们立即删除。</span>
-        </span>
+    <el-row type="flex" style="height: 76px">
+      <el-col :xs="2" :sm="2" :md="2" :lg="2" :xl="2">
+
         <!--        <br/>-->
       </el-col>
-      <el-col :xs="0" :md="6" :lg="6" :xl="6">
+      <el-col :xs="6" :sm="6" :md="6" :lg="3" :xl="3">
         <span>
-          <h3>Blog,记录美好时光</h3>
-
-          <ul>
-            <a class="bottomUrl" href="/"><li>关于网站</li></a>
-            <a class="bottomUrl" href="/"><li>下载帮助</li></a>
-            <a class="bottomUrl" href="/"><li>版权说明</li></a>
-            <a class="bottomUrl" href="/"><li>会员说明</li></a>
-            <a class="bottomUrl" href="/"><li>分享规则</li></a>
-          </ul>
+          <img style="width: 80%;height: 80%" src="../assets/logo.png">
         </span>
       </el-col>
-      <el-col :xs="0" :md="6" :lg="6" :xl="6">
-        <span>
-          <h3>隐私协议 & 问题反馈</h3>
-          <ul>
-            <li>隐私协议</li>
-            <li>联系我们</li>
-            <li>反馈问题</li>
-          </ul>
+      <el-col class="hidden-md-and-down" :lg="9" :xl="9">
+        <div class="footer-link">
 
-        </span>
+          <span style="padding-right: 2%"><el-link href="/">首页</el-link></span>
+          <span style="padding-right: 2%"><el-link href="/about">关于</el-link></span>
+          <span style="padding-right: 2%"><el-link href="/">联系</el-link></span>
+          <span style="padding-right: 2%"><el-link href="/">隐私</el-link></span>
+          <span style="padding-right: 2%"><el-link href="/">更新日志</el-link></span>
 
+        </div>
       </el-col>
-      <el-col :xs="12" :md="6" :lg="6" :xl="6">
+      <el-col :xs="0" :sm="6" :md="6" :lg="4" :xl="4">
+        <div class="footer-copy-right">
+          <el-link href="https://beian.miit.gov.cn/">
+          <span>
+            豫ICP备2021012196号
+          </span>
+          </el-link>
+        </div>
+      </el-col>
+      <el-col :xs="14" :sm="8" :md="8" :lg="4" :xl="4">
+        <div class="footer-copy-right">
+          <span>&nbsp; &nbsp; 52coco.com © 2021. Flik. All rights reserved. </span>
+        </div>
+      </el-col>
+      <el-col :xs="2" :sm="2" :md="2" :lg="2" :xl="2">
         <span>
-          <h3>联 系 客 服</h3>
-          <br/>
-          <img width="30%" style="padding-right: 5%;" src="https://z3.ax1x.com/2021/07/22/W0ziH1.png">
-          <img width="30%" style="padding-left: 5%" src="https://z3.ax1x.com/2021/07/22/W0ziH1.png">
+
         </span>
       </el-col>
     </el-row>
-    <el-row>
-      <el-link href="https://beian.miit.gov.cn/">
-        <span>
-          豫ICP备2021012196号-1
-        </span>
-      </el-link>
 
-    </el-row>
   </div>
 </template>
 
 <script>
+import 'element-ui/lib/theme-chalk/display.css';
+
 export default {
+
   name: "LayoutFooter",
-  data: {},
+  data() {
+    return {}
+  },
   methods: {
     // setClientWidth(){
     //   this.clientWidth=document.body.clientWidth
@@ -78,14 +72,22 @@ export default {
 </script>
 
 <style scoped>
-ul {
-  padding-left: 0px;
+.footer-copy-right {
+  font-size: small;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
-li {
-  list-style: none;
-  padding: 3px;
+.footer-link {
+  font-size: small;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
+
 
 a {
   text-decoration: none;
@@ -102,11 +104,6 @@ a:after {
 
 a:before {
   color: #475669;
-}
-
-.span1 {
-  font-family: "JetBrains Mono";
-  font-size: 10px;
 }
 
 

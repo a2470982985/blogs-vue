@@ -53,7 +53,7 @@
               <el-link style="float: right" v-popover:popover type="primary"></el-link>
 
             </el-form>
-            <el-button type="primary" @click="submitData('parameter')" round></el-button>
+            <el-button type="primary" @click="submitData('parameter')" round>提 交</el-button>
           </div>
         </el-collapse-transition>
       </div>
@@ -113,11 +113,7 @@ export default {
     }
   },
   methods: {
-    initText(element) {
-      element.innerText = "使用帮助";
-      console.log(element.innerText)
-    },
-    submitData(parameter) {
+    submitData: function (parameter) {
       let that = this
       this.$refs[parameter].validate((valid) => {
         if (!valid) {
@@ -132,15 +128,22 @@ export default {
         } else {
           that.loading = true
           this.postRequest("/api/user/login", this.parameter).then(function (response) {
-            if (!response){
+            if (!response) {
               that.successNotice = !that.successNotice;
               that.resultNotice.iconStr = "error";
               that.resultNotice.titleStr = "登录失败";
               that.resultNotice.subTitle = "发生未知错误！请联系管理员";
 
-            }else {
-              const tokenStr = response.data.tokenHead+response.data.token;
-              window.sessionStorage.setItem("token",tokenStr);
+            } else {
+              const tokenStr = response.data.tokenHead + response.data.token;
+              const parseList=response.data.token.split(".")
+              //负载
+              const payload=window.atob(parseList[1])
+
+              //向vuex内存入token 并写入到sessionStorage
+              that.$store.commit("setToken", tokenStr)
+              // that.$store.commit("setUsername", payload.username)
+              that.$store.commit("setPayload",payload)
 
               that.successNotice = !that.successNotice;
               that.resultNotice.iconStr = "success";
@@ -166,12 +169,11 @@ export default {
   mounted() {
     let that = this
     this.$nextTick(() => {
-      console.log(that.init)
+      // console.log(that.init)
       // that.init = false
       setTimeout(function () {
         that.init = true
       }, Math.round(Math.random() * 500 + 100))
-      document.getElementsByClassName("el-button")[1].innerText = "提 交"
       document.getElementsByClassName("el-link")[0].text = "使用帮助"
       document.getElementsByClassName("el-link")[1].text = "联系作者"
       document.getElementsByTagName("h1")[0].innerText = "系统登录"

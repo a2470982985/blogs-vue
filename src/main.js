@@ -5,6 +5,7 @@ import store from './store'
 import './plugins/element.js'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import mavenEditor from 'mavon-editor'  //引入mavon-editor 就是上面所安装的
 import {postRequest} from "./utils/api";
 import {putRequest} from "./utils/api";
 import {deleteRequest} from "./utils/api";
@@ -12,6 +13,7 @@ import {getRequest} from "./utils/api";
 
 Vue.config.productionTip = false;
 Vue.use(VueAxios, axios)
+Vue.use(mavenEditor)
 
 
 
