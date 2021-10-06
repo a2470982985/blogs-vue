@@ -46,9 +46,15 @@ export default {
     },
     getArticle() {
       // this.article={};
+      let _this=this
       this.getRequest("/api/article/articles/" + this.$route.query.articleId).then(resp => {
         console.log(resp)
+        if (resp.code==4102){
+          _this.$router.push("/");
+          return;
+        }
         this.article = resp.data;
+
       }, error => {
 
       })

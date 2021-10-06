@@ -68,6 +68,7 @@ const routes = [
         path: '/apis',
         name:'apis',
         meta: {
+            isLogin: true,
             title: "公共api分享-Flik,让生活,更生活"
         },
         component: () => import('../views/apis/Apis')
@@ -75,6 +76,7 @@ const routes = [
         path: '/postArticle',
         name:'publishArticle',
         meta: {
+            isLogin: true,
             title: "发表文章-Flik,让生活,更生活"
         },
         component: () => import('../views/article/publishArticle')

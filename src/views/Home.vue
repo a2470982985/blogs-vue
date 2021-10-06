@@ -255,7 +255,7 @@ export default {
   }
 
   .card-title{
-    font-size: 5px;
+    font-size: 10px;
   }
 
   /*走马灯 内部 文字 文字定位*/
