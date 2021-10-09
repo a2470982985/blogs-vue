@@ -42,7 +42,7 @@
           </el-form-item>
           <el-form-item label="图片链接" prop="imageType">
             <el-radio-group v-model="form.imageType">
-                <el-radio label="0">随机图片</el-radio>
+                <el-radio label="0">自动选择</el-radio>
                 <el-radio label="1">手动输入</el-radio>
               </el-radio-group>
           </el-form-item>

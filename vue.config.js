@@ -33,14 +33,14 @@ module.exports = {
                 //webSocker
                 ws: false,
                 // 目标地址
-                target: 'http://www.52coco.xyz',
-                // target: 'http://localhost:8081',
+                // target: 'http://www.52coco.xyz',
+                target: 'http://localhost:8081',
                 //发送请求host会被设置成target的地址
                 changeOrigin: true,
                 // 补充些请求地址
-                // pathRewrite: {
-                //     '/api': ''
-                // }
+                pathRewrite: {
+                    '/api': ''
+                }
             }
 
         }
