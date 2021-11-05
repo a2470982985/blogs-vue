@@ -26,12 +26,11 @@
       <el-col :xs="12" v-for="(card, index) in item" :key="index" :offset="(index+1) %4==1 ? 0 : 1">
         <el-link style="width: 100%;height: 100%" :underline="false">
           <el-card :body-style="{ padding: '0px',width:'100%' }" shadow="always" @click.native="cardClick(card)">
-
             <el-image
                 :src="card.articleImage"
-                style=""
+                style="height: 70%"
             />
-            <div style="padding: 14px;">
+            <div style="padding: 14px;height: 30%">
               <span class="card-title">{{ card.title }}</span>
               <div class="bottom" v-if="introFlag">
                 <time style="color: #999;font-size: 13px;">{{ card.intro }}</time>
@@ -96,7 +95,7 @@ export default {
       this.getRequest("/api/home/getCarousel").then((resp) => {
         // console.log(resp.data)
         if (resp) {
-          this.dataList = resp.data
+          // this.dataList = resp.data;
           this.img_load()
         }
 
@@ -129,61 +128,9 @@ export default {
     return {
       currentDate: new Date(),
       introFlag: false,
-      dataList: [{
-        "id": 4,
-        "uuid": "6cf93d10d9a34560bf3a3ce85ff81c44",
-        "title": "测试title4",
-        "intro": "测试title4",
-        "readCounts": 0,
-        "category": 0,
-        "articleImage": "https://admin.campushoy.com/static/img/bg.459cf8df.png",
-        "articleId": "1443539829102088192",
-        "releaseTime": "2021-09-30T19:34:50",
-        "externalLink": null
-      }, {
-        "id": 2,
-        "uuid": "6cf93d10d9a34560bf3a3ce85ff81c44",
-        "title": "今日校园健康提交",
-        "intro": "今日校园健康提交",
-        "readCounts": 0,
-        "category": 0,
-        "articleImage": "https://admin.campushoy.com/static/img/bg.459cf8df.png",
-        "articleId": "1443539769782046720",
-        "releaseTime": "2021-09-30T19:34:35",
-        "externalLink": null
-      }, {
-        "id": 1,
-        "uuid": "6cf93d10d9a34560bf3a3ce85ff81c44",
-        "title": "亚滴新能源打卡",
-        "intro": "亚滴新能源打卡",
-        "readCounts": 0,
-        "category": 0,
-        "articleImage": "http://120.77.35.111:81/OAapp/htpages/app/css/comm/public/login/Dvpt/img/login_bg_new_b.jpg",
-        "articleId": "1443539233800327168",
-        "releaseTime": "2021-09-30T19:32:28",
-        "externalLink": null
-      }],
+      dataList: [{"id":1,"uuid":"6cf93d10d9a34560bf3a3ce85ff81c44","title":"Markdown 基本语法。","intro":"Markdown 基本语法。","readCounts":55,"category":0,"articleImage":"https://www.qijishow.com/images/20210101.jpg","articleId":"0e26c7b318944fae9451583eb931a615","releaseTime":"2021-10-12T12:56:09","externalLink":null},{"id":3,"uuid":"6cf93d10d9a34560bf3a3ce85ff81c44","title":"Spring Cloud 微服务架构学习笔记与示例","intro":"Spring Cloud 微服务架构学习笔记与示例","readCounts":43,"category":0,"articleImage":"http://www.qijishow.com/images/banner12.jpg","articleId":"d95c7c5d8a184599a98325f6354d39ba","releaseTime":"2021-10-12T13:40:17","externalLink":null},{"id":4,"uuid":"6cf93d10d9a34560bf3a3ce85ff81c44","title":"精华学习平台Api接口分享","intro":"精华学习平台Api接口分享","readCounts":43,"category":0,"articleImage":"http://www.qijishow.com/images/Christmasbanner13.jpg","articleId":"ca502f98abb244faa6cc24d6038c078f","releaseTime":"2021-10-12T13:43:41","externalLink":null}],
       img_height: '',
-      cardList: [
-        {
-          "title": "亚滴新能源打卡",
-          "imageUrl": "http://120.77.35.111:81/OAapp/htpages/app/css/comm/public/login/Dvpt/img/login_bg_new_b.jpg",
-          "intro": "亚滴新能源打卡",
-          "article": "/api/sign"
-        },
-        {
-          "title": "今日校园健康提交",
-          "imageUrl": "https://admin.campushoy.com/static/img/bg.459cf8df.png",
-          "intro": "今日校园健康提交",
-          "article": "/api/health"
-        },
-        {
-          "title": "标题",
-          "imageUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a532e33470d046b3f044d5ea49fc5e9e.png?thumb=1&w=1226&h=460&f=webp&q=90",
-          "intro": "这是一段简介3",
-          "article": "/about"
-        },
-      ]
+      cardList: []
     }
   },
   mounted() {
@@ -211,6 +158,9 @@ export default {
     border-radius: 15px;
   }
 
+  .el-link--inner{
+    height: 100%!important;
+  }
   /*卡片 圆角*/
   .el-card {
     border-radius: 20px;
