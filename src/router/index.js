@@ -80,6 +80,14 @@ const routes = [
             title: "发表文章-Flik,让生活,更生活"
         },
         component: () => import('../views/article/publishArticle')
+    },{
+        path: '/parseHtml',
+        name:'parseHtml',
+        meta: {
+            isLogin: false,
+            title: "解析HTML-Flik"
+        },
+        component: () => import('../views/util/parseHtml')
     }
 ]
 
