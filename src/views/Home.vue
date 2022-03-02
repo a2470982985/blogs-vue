@@ -95,7 +95,7 @@ export default {
       this.getRequest("/api/home/getCarousel").then((resp) => {
         // console.log(resp.data)
         if (resp) {
-          // this.dataList = resp.data;
+          this.dataList = resp.data;
           this.img_load()
         }
 
